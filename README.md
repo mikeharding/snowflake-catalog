@@ -35,7 +35,7 @@ List of filters in order, as configured on the Dashboard
 ![filters](./images/filters.png)
 
 #### :tablename
-![tablename_filter](./images/tablename.png)
+![tablename_filter](./images/table_name.png)
 
 Query:
 ```
