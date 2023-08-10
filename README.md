@@ -12,8 +12,8 @@ The filters are based on snowflake.account_usage.tables.  You can refresh the fi
 
 To build the dashboard, follow these steps:
 
-1- Create the local tables based on snowflake.account_usage views.
-2- Created the Dashboard Filters
-3- Create the Dashboard Tiles
+1. Create the local tables based on snowflake.account_usage views.
+2. Created the Dashboard Filters
+3. Create the Dashboard Tiles
 
 ## Create Local Tables
