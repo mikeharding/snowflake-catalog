@@ -16,4 +16,10 @@ To build the dashboard, follow these steps:
 2. Created the Dashboard Filters
 3. Create the Dashboard Tiles
 
-## Create Local Tables
+## 1 - Create Local Tables
+
+Using local snapshots from `snowflake.account_usage` views can speed up the Dashboard and allow using a smaller size Warehouse but you will need to schedule a refresh of the snapshots.
+
+Run [local_tablesd.sql](./local_tables.sql)
+
+## 2 - Create the Dashboard Filters
