@@ -33,6 +33,7 @@ List of filters in order, as configured on the Dashboard
 - :deleted
 
 ![filters](./images/filters.png)
+
 ---
 #### :tablename
 ![tablename_filter](./images/table_name.png)
@@ -42,6 +43,7 @@ Query:
 select distinct table_name from snowflake.account_usage.tables
 order by 1;
 ```
+
 ---
 #### :database
 ![database_filter](./images/database.png)
