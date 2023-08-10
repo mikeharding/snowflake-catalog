@@ -34,7 +34,10 @@ List of filters in order, as configured on the Dashboard
 
 ![filters](./images/filters.png)
 
-<&nbsp>
+&nbsp;
+
+&nbsp;
+
 ---
 #### :tablename
 ![tablename_filter](./images/table_name.png)
