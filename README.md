@@ -84,7 +84,7 @@ ORDER BY 1 asc;
 #### :tabletype
 <img src='images/table_type.png' width='750px'>
 
---Query:__
+__Query:__
 ```
 SELECT DISTINCT table_type
 FROM snowflake.account_usage.tables
@@ -98,8 +98,45 @@ ORDER BY 1 asc;
 #### :deleted
 <img src='images/deleted_flag.png' width='750px'>
 
---Query:__
+__Query:__
 ```
 SELECT DISTINCT CASE WHEN deleted IS NOT NULL THEN 'Exists' ELSE 'Deleted' END AS IsDeleted
 FROM snowflake.account_usage.tables;
+```
+&nbsp;
+
+&nbsp;
+
+---
+
+## 3 - Create Dashboard Tiles
+
+### Tile 1
+
+__Name:__ Tables
+
+__Query:__
+```
+select  table_name as "Table Name"
+       ,table_catalog as "Database"
+       ,table_schema as "Schema"
+       ,table_type as "Table Type"
+       ,clustering_key as "Clustering Key"
+       ,row_count as "Row Count"
+       ,bytes/1024/1024 as "Megabytes"
+       ,retention_time as "Retention Time"
+       ,created as "Created On"
+       ,last_altered as "Last Modified"
+       ,auto_clustering_on as "Auto Clustering On"
+       ,comment as "Comment"
+       ,case when deleted is null then 'Exists' else 'Deleted' end as "Is Deleted"
+       ,deleted as "Deleted Date"
+from catalog.account_usage.tables
+where true
+  and "Table Name" = :tablename
+  and "Database" = :database
+  and "Schema" = :schema
+  AND "Table Type" = :tabletype
+  and "Is Deleted" = :deleted
+order by 1 asc;
 ```
