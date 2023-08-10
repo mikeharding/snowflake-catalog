@@ -32,6 +32,8 @@ List of filters:
 :tabletype
 :deleted
 
+![filters](./images.filters.png)
+
 #### :tablename
 ![tablename_filter](./images/tablename.png)
 
