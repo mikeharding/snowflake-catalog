@@ -24,7 +24,7 @@ Run [local_tables.sql](./local_tables.sql)
 
 ## 2 - Create the Dashboard Filters
 
-List of filters:
+List of filters in order, as configured on the Dashboard
 
 - :tablename
 - :database
