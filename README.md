@@ -46,7 +46,7 @@ __Query:__
 ```
 SELECT DISTINCT table_name
 FROM snowflake.account_usage.tables
-ORDER BY 1;
+ORDER BY 1 ASC;
 ```
 &nbsp;
 
@@ -60,7 +60,7 @@ __Query:__
 ```
 SELECT DISTINCT table_catalog
 FROM snowflake.account_usage.tables
-ORDER BY 1 asc;
+ORDER BY 1 ASC;
 ```
 &nbsp;
 
@@ -74,7 +74,7 @@ __Query:__
 ```
 SELECT DISTINCT table_schema
 FROM snowflake.account_usage.tables
-ORDER BY 1 asc;
+ORDER BY 1 ASC;
 ```
 &nbsp;
 
@@ -88,7 +88,7 @@ __Query:__
 ```
 SELECT DISTINCT table_type
 FROM snowflake.account_usage.tables
-ORDER BY 1 asc;
+ORDER BY 1 ASC;
 ```
 &nbsp;
 
@@ -107,7 +107,6 @@ FROM snowflake.account_usage.tables;
 
 &nbsp;
 
----
 
 ## 3 - Create Dashboard Tiles
 
@@ -117,26 +116,26 @@ __Name:__ Tables
 
 __Query:__
 ```
-select  table_name as "Table Name"
-       ,table_catalog as "Database"
-       ,table_schema as "Schema"
-       ,table_type as "Table Type"
-       ,clustering_key as "Clustering Key"
-       ,row_count as "Row Count"
-       ,bytes/1024/1024 as "Megabytes"
-       ,retention_time as "Retention Time"
-       ,created as "Created On"
-       ,last_altered as "Last Modified"
-       ,auto_clustering_on as "Auto Clustering On"
-       ,comment as "Comment"
-       ,case when deleted is null then 'Exists' else 'Deleted' end as "Is Deleted"
-       ,deleted as "Deleted Date"
-from catalog.account_usage.tables
-where true
-  and "Table Name" = :tablename
-  and "Database" = :database
-  and "Schema" = :schema
+SELECT  table_name AS "Table Name"
+       ,table_catalog AS "Database"
+       ,table_schema AS "Schema"
+       ,table_type AS "Table Type"
+       ,clustering_key AS "Clustering Key"
+       ,row_count AS "Row Count"
+       ,bytes/1024/1024 AS "Megabytes"
+       ,retention_time AS "Retention Time"
+       ,created AS "Created On"
+       ,last_altered AS "Last Modified"
+       ,auto_clustering_on AS "Auto Clustering On"
+       ,comment AS "Comment"
+       ,CASE WHEN deleted IS NULL THEN 'Exists' ELSE 'Deleted' END AS "Is Deleted"
+       ,deleted AS "Deleted Date"
+FROM snowflake.account_usage.tables
+WHERE true
+  AND "Table Name" = :tablename
+  AND "Database" = :database
+  AND "Schema" = :schema
   AND "Table Type" = :tabletype
-  and "Is Deleted" = :deleted
-order by 1 asc;
+  AND "Is Deleted" = :deleted
+ORDER BY 1 ASC;
 ```
