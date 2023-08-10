@@ -39,7 +39,6 @@ Query:
 ```
 select distinct table_name from snowflake.account_usage.tables
 order by 1;
-
 ```
 
 #### :database
