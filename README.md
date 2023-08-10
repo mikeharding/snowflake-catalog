@@ -42,19 +42,43 @@ List of filters in order, as configured on the Dashboard
 #### :tablename
 ![tablename_filter](./images/table_name.png)
 
-Query:
+__Query:__
 ```
-select distinct table_name from snowflake.account_usage.tables
-order by 1;
+SELECT DISTINCT table_name
+FROM snowflake.account_usage.tables
+ORDER BY 1;
 ```
+&nbsp;
+
+&nbsp;
 
 ---
 #### :database
 ![database_filter](./images/database.png)
 
-Query:
+__Query:__
 ```
-select distinct table_catalog
-from snowflake.account_usage.tables
-order by 1 asc;
+SELECT DISTINCT table_catalog
+FROM snowflake.account_usage.tables
+ORDER BY 1 asc;
 ```
+&nbsp;
+
+&nbsp;
+
+---
+#### :schema
+![schema_filter](./images/schema.png)
+
+__Query:__
+```
+SELECT DISTINCT table_schema
+FROM catalog.account_usage.tables
+ORDER BY 1 asc;
+```
+&nbsp;
+
+&nbsp;
+
+---
+#### :tabletype
