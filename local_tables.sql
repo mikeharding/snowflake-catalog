@@ -40,8 +40,8 @@ FROM
     INPUT => columns_modified.value: "directSourceColumns",
     outer => true
   ) direct_source_columns
-WHERE t.query_start_time::date >= current_date() - 1
-  AND split_part(om.value:"objectName"::string, '.', 1) = 'CITIBIKE'
+WHERE t.query_start_time::date >= current_date() - 1 -- set how far back you want to capture lineage
+--AND split_part(om.value:"objectName"::string, '.', 1) = 'CITIBIKE' -- filter to a single database if needed
 
 
 UNION
@@ -75,6 +75,6 @@ FROM
     INPUT => columns_modified.value: "baseSourceColumns",
     outer => true
   ) base_source_columns
-WHERE t.query_start_time::date >= current_date()-1
-  AND split_part(om.value:"objectName"::string, '.', 1) = 'CITIBIKE'
+WHERE t.query_start_time::date >= current_date()-1 -- set how far back you want to capture lineage
+--AND split_part(om.value:"objectName"::string, '.', 1) = 'CITIBIKE' -- filter to a single database
 );
