@@ -40,7 +40,7 @@ List of filters in order, as configured on the Dashboard
 
 ---
 #### :tablename
-<img src='images/table_name.png' width='450px'>
+<img src='images/table_name.png' width='750px'>
 
 __Query:__
 ```
