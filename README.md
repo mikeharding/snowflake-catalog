@@ -27,9 +27,13 @@ Run [local_tables.sql](./local_tables.sql)
 List of filters:
 
 :tablename
+
 :database
+
 :schema
+
 :tabletype
+
 :deleted
 
 ![filters](./images/filters.png)
