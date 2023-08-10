@@ -54,7 +54,7 @@ ORDER BY 1;
 
 ---
 #### :database
-![database_filter](./images/database.png)
+<img src='images/database.png' width='750px'>
 
 __Query:__
 ```
@@ -68,12 +68,12 @@ ORDER BY 1 asc;
 
 ---
 #### :schema
-![schema_filter](./images/schema.png)
+<img src='images/schema.png' width='750px'>
 
 __Query:__
 ```
 SELECT DISTINCT table_schema
-FROM catalog.account_usage.tables
+FROM snowflake.account_usage.tables
 ORDER BY 1 asc;
 ```
 &nbsp;
@@ -82,3 +82,24 @@ ORDER BY 1 asc;
 
 ---
 #### :tabletype
+<img src='images/table_type.png' width='750px'>
+
+--Query:__
+```
+SELECT DISTINCT table_type
+FROM snowflake.account_usage.tables
+ORDER BY 1 asc;
+```
+&nbsp;
+
+&nbsp;
+
+---
+#### :deleted
+<img src='images/deleted_flag.png' width='750px'>
+
+--Query:__
+```
+SELECT DISTINCT CASE WHEN deleted IS NOT NULL THEN 'Exists' ELSE 'Deleted' END AS IsDeleted
+FROM snowflake.account_usage.tables;
+```
