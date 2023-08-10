@@ -23,3 +23,31 @@ Using local snapshots from `snowflake.account_usage` views can speed up the Dash
 Run [local_tables.sql](./local_tables.sql)
 
 ## 2 - Create the Dashboard Filters
+
+List of filters:
+
+:tablename
+:database
+:schema
+:tabletype
+:deleted
+
+#### :tablename
+![tablename_filter](./images/tablename.png)
+
+Query:
+```
+select distinct table_name from snowflake.account_usage.tables
+order by 1;
+
+```
+
+#### :database
+![database_filter](./images/database.png)
+
+Query:
+```
+select distinct table_catalog
+from snowflake.account_usage.tables
+order by 1 asc;
+```
